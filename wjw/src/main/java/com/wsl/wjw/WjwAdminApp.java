@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WjwApplication {
+public class WjwAdminApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WjwApplication.class, args);
+		SpringApplication.run(WjwAdminApp.class, args);
 	}
 }
