@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wsl</groupId>
-	<artifactId>wjw-admin</artifactId>
+	<artifactId>wjw-front</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>wjw-admin</name>
-	<description>wjw-admin project for Spring Boot</description>
+	<name>wjw-front</name>
+	<description>wjw-front project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
