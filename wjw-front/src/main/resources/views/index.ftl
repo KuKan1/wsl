@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimum-scale=1.0">
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/index.css">
-		<title>万福网</title>
+		<title>网劵网</title>
 	</head>
 	<body style="-webkit-text-size-adjust: 100%!important;">
 		<div id="wrapper">
@@ -59,17 +59,17 @@
 			<!--nav start-->
 			<div id="nav">
 				<nav class="clearfix">
-					<a href="Integral_mall.html">
+					<a href="mesh/Inner_page/tb">
 						<img src="images/1.png" />
-						<span>积分商城</span>
+						<span>淘宝劵</span>
 					</a>
-					<a href="Media.html">
+					<a href="mesh/Inner_page/tm">
 						<img src="images/2.png" />
-						<span>影音天地</span>
+						<span>天猫劵</span>
 					</a>
-					<a href="Birthday_zone.html">
+					<a href="mesh/Inner_page/jd">
 						<img src="images/3.png" />
-						<span>生日专区</span>
+						<span>京东劵</span>
 					</a>
 					<a href="Orchard_fragrance.html">
 						<img src="images/4.png" />

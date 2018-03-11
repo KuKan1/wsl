@@ -7,10 +7,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
-
 	@RequestMapping(value = "/index")
     public String index(ModelAndView modelAndView) {
-		
 		return "/index";  
     }
     
