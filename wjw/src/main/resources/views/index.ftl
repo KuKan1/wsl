@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Amaze UI Admin index Examples</title>
+<title>网券网-后台管理</title>
 <meta name="description" content="这是一个 index 页面">
 <meta name="keywords" content="index">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="renderer" content="webkit">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<link rel="icon" type="image/png" href="/i/favicon.png">
-<link rel="apple-touch-icon-precomposed" href="/i/app-icon72x72@2x.png">
+<link rel="icon" type="image/png" href="${basePath}/i/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="${basePath}/i/app-icon72x72@2x.png">
 <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-<link rel="stylesheet" href="/css/amazeui.min.css"/>
-<link rel="stylesheet" href="/css/admin.css">
-<script src="/js/jquery.min.js"></script>
-<script src="/js/app.js"></script>
+<link rel="stylesheet" href="${basePath}/css/amazeui.min.css"/>
+<link rel="stylesheet" href="${basePath}/css/admin.css">
+<script src="${basePath}/js/jquery.min.js"></script>
+<script src="${basePath}/js/app.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]><p class="browsehappy">升级你的浏览器吧！ <a href="http://se.360.cn/" target="_blank">升级浏览器</a>以获得更好的体验！</p><![endif]-->
@@ -23,7 +23,7 @@
 
 <body>
 <header class="am-topbar admin-header">
-  <div class="am-topbar-brand"><img src="/i/logo.png"></div>
+  <div class="am-topbar-brand"><img src="${basePath}/i/logo.png"></div>
 
   <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
     <ul class="am-nav am-nav-pills am-topbar-nav admin-header-list">
@@ -95,10 +95,10 @@
     <div class="sideMenu">
       <h3 class="am-icon-flag"><em></em> <a href="#">商品管理</a></h3>
       <ul>
-        <li><a href="">商品列表</a></li>
-        <li class="func" dataType='html' dataLink='msn.htm' iconImg='images/msn.gif'>添加新商品</li>
-        <li>商品分类</li>
-        <li>用户评论</li>
+        <li><a href="${basePath}/goods/">商品列表</a></li>
+        <li ><a href="${basePath}/goods/add">添加新商品</a></li>
+        <li ><a href="${basePath}/goods/type">商品分类</a></li>
+        <li class="func">用户评论</li>
         <li>商品回收站</li>
         <li>库存管理 </li>
       </ul>
@@ -496,7 +496,7 @@
 </div>
 
     <div class="foods">
-    	<ul>版权所有@2015 .</dl>
+    	<ul>版权所有@2018 .</dl>
 
 
     	
@@ -520,13 +520,13 @@
 <!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="/js/polyfill/rem.min.js"></script>
-<script src="/js/polyfill/respond.min.js"></script>
-<script src="/js/amazeui.legacy.js"></script>
+<script src="${basePath}/js/polyfill/rem.min.js"></script>
+<script src="${basePath}/js/polyfill/respond.min.js"></script>
+<script src="${basePath}/js/amazeui.legacy.js"></script>
 <![endif]--> 
 
 <!--[if (gte IE 9)|!(IE)]><!--> 
-<script src="/js/amazeui.min.js"></script>
+<script src="${basePath}/js/amazeui.min.js"></script>
 <!--<![endif]-->
 
 
