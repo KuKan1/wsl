@@ -4,25 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.wsl.wjw.constant.PageConst;
+import com.wsl.wjw.dto.CategoryDto;
+import com.wsl.wjw.service.CategoryService;
 
 @Controller
 @RequestMapping(value="mesh")
 public class MeshController {
 
+	@Autowired
+	private CategoryService categoryService;
+	
 	@RequestMapping(value = "/{page}/{model}")
-    public String meshOne(@PathVariable String page,@PathVariable String model, Map<String,Object> map) {
-		if(PageConst.MODEL_TB.equals(model)){
-			map.put("modelName", PageConst.MODEL_NAME_TB);  
-		}else if(PageConst.MODEL_TM.equals(model)){
-			map.put("modelName", PageConst.MODEL_NAME_TM);  
-		}else if(PageConst.MODEL_JD.equals(model)){
-			map.put("modelName", PageConst.MODEL_NAME_JD);  
+    public String meshOne(@PathVariable String page,@PathVariable Long model, Map<String,Object> map) throws Exception {
+		List<CategoryDto> categoryList = categoryService.queryCategoryListByTypeId(model);
+		if(categoryList != null && categoryList.size() > 1){
+			map.put("modelName", categoryList.get(0).getTypeName());
+			map.put("categoryList", categoryList);
+		}else{
+			return "/help";  
 		}
+		
 		List list = new ArrayList();
 		for(int i = 0; i < 8; i++){
 			list.add(i+1);

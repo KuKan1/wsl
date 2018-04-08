@@ -16,8 +16,7 @@ function onloadNav(){
 	$.get(type_url, function(data){
 		for (var i = 0; i < data.length; i++) {
 			var type = data[i];
-			console.log(type);
-			var em_a = '<a href="mesh/Inner_page/'+type.vshort+'">';
+			var em_a = '<a href="mesh/Inner_page/'+type.id+'">';
 			var em_img = em_a+'<img src="images/'+type.vshort+'.png" />';
 			var em_span = em_img+'<span>'+type.vname+'</span>';
 			var em =em_span+ '</a>';
