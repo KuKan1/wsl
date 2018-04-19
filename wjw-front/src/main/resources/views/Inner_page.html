@@ -15,17 +15,17 @@
 	<body>
 		<div id="wrapper" class="inner_style">
 			<!--<h2 class="int_title clearfix"><span class="int_pic"><img src="${basePath}/images/jifen/left.png"/></span>${modelName}</h2>-->
-			<div class="int_title"><span class="int_pic"><a href="index.html"><img src="${basePath}/images/jifen/left.png"/></a></span>${modelName}</div>
+			<div class="int_title"><span class="int_pic"><a href="/"><img src="${basePath}/images/jifen/left.png"/></a></span>${modelName}</div>
 							<div class="secskill-content inner_pages topline">
 								<ul class="swiper-wrapper inner_nav">
 									<#list categoryList as category>  
 										<#if category_index ==0><hr/>
-											<li class="swiper-slide inner_con inner_con_style">
+											<li class="swiper-slide inner_con inner_con_style category_id" ct-id="${category.typeId}_${category.id}">
 												${category.vname} 
 												<span class="inner_border_con" style="display: block;"></span>
 											</li>
 										<#else>
-											<li class="swiper-slide inner_con">
+											<li class="swiper-slide inner_con category_id" ct-id="${category.typeId}_${category.id}">
 												${category.vname} 
 												<span class="inner_border_con"></span>
 											</li>
@@ -88,6 +88,7 @@
 		<script type="text/javascript" src="${basePath}/js/jquery-1.11.3.min.js" ></script>
 		<script type="text/javascript" src="${basePath}/js/inner.js" ></script>
 		<script type="text/javascript" src="${basePath}/js/pay_success.js" ></script>
+		<script type="text/javascript" src="${basePath}/pageJs/function.common.js"></script>
 		<script type="text/javascript" src="${basePath}/pageJs/show/inner_page.js" ></script>
 	</body>
 </html>

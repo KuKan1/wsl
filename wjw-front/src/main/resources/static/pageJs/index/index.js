@@ -7,10 +7,6 @@ $(function(){
 	onloadNav();
 });
 
-var CommonVar={
-	app_root:"http://192.168.0.101:8082"
-}
-
 function onloadNav(){
 	var type_url = CommonVar.app_root+"/type/all";
 	$.get(type_url, function(data){
