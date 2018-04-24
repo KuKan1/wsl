@@ -14,18 +14,17 @@
 	</head>
 	<body>
 		<div id="wrapper" class="inner_style">
-			<!--<h2 class="int_title clearfix"><span class="int_pic"><img src="${basePath}/images/jifen/left.png"/></span>${modelName}</h2>-->
 			<div class="int_title"><span class="int_pic"><a href="/"><img src="${basePath}/images/jifen/left.png"/></a></span>${modelName}</div>
 							<div class="secskill-content inner_pages topline">
 								<ul class="swiper-wrapper inner_nav">
 									<#list categoryList as category>  
 										<#if category_index ==0><hr/>
-											<li class="swiper-slide inner_con inner_con_style category_id" ct-id="${category.typeId}_${category.id}">
+											<li class="swiper-slide inner_con inner_con_style category_id" ct-id="${category.typeId}" ty-id="${category.id}">
 												${category.vname} 
 												<span class="inner_border_con" style="display: block;"></span>
 											</li>
 										<#else>
-											<li class="swiper-slide inner_con category_id" ct-id="${category.typeId}_${category.id}">
+											<li class="swiper-slide inner_con category_id" ct-id="${category.typeId}" ty-id="${category.id}">
 												${category.vname} 
 												<span class="inner_border_con"></span>
 											</li>
@@ -35,44 +34,8 @@
 							</div>
 				<main>
 					<div class="best_Sellers best_top clearfix">
-						<ul style="display: block;" class="clearfix best_content">
-							<#list list as index>  
-						        <a href="https://union-click.jd.com/jdc?d=g0HAH6">
-								<li class="border_right fl">
-									<img src="${basePath}/images/jifen/jd-001.jpg" />
-									<span>点魅 不锈钢铲六件套 锅铲套装不锈钢铲勺汤勺炒菜铲子铲勺套装六件套 锅铲六套装${index}</span>
-									<span class="int_color">京东价: ￥69.90</span>
-									<span class="int_color">券后价: ￥29.90</span>
-								</li>
-							</a>
-							<a href="https://union-click.jd.com/jdc?d=g0HAH6">
-								<li class="fl">
-									<img src="${basePath}/images/jifen/jd-001.jpg" />
-									<span>点魅 不锈钢铲六件套 锅铲套装不锈钢铲勺汤勺炒菜铲子铲勺套装六件套 锅铲六套装${index+1}</span>
-									<span class="int_color">京东价: ￥69.90</span>
-									<span class="int_color">券后价: ￥29.90</span>
-								</li>
-							</a>
-						    </#list> 
+						<ul style="display: block;" class="clearfix best_content" id="sw-shop-list">
 						</ul>
-						<!-- <ul class="clearfix best_content">
-							<#list list as index>  
-						         <a href="Details_zoom.html">
-								<li class="border_right fl">
-									<img src="${basePath}/images/jifen/sp2.png" />
-									<span>迷你智能电饭煲${index}</span>
-									<span class="int_color">86.0积分</span>
-								</li>
-							</a>
-							<a href="Details_zoom.html">
-								<li class="fl">
-									<img src="${basePath}/images/jifen/sp2.png" />
-									<span>迷你智能电饭煲${index+1}</span>
-									<span class="int_color">86.0积分</span>
-								</li>
-							</a>
-						    </#list> 
-						</ul> -->
 					</div>
 					<p class="notice">没有更多商品了！</p>
 			</main>

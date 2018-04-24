@@ -21,15 +21,15 @@
   </sql>
   	
   	<!-- 根据typeId查询所有商品卷 -->
-	<select id="queryShopByTypeId" parameterType="java.lang.Long" resultType="com.wsl.wjw.dto.ShopDto">
+	<select id="queryShopByTypeId" parameterType="java.lang.Long" resultMap="BaseResultMap">
 		select 
 		<include refid="Base_Column_List"></include>
 		from venux_wqw_shop where dr=1 and type_id=#{typeId}
 	</select>
 	<!-- 根据查询typeId下categoryId类型DTO -->
-	<select id="queryShopByCategoryId"  parameterType="com.wsl.wjw.dto.query.ShopQueryParam"  resultType="com.wsl.wjw.dto.ShopDto">
+	<select id="queryShopByCategoryId"  parameterType="com.wsl.wjw.dto.query.ShopQueryParam"  resultMap="BaseResultMap">
 		select 
-		<include refid="Base_Column_List"></include> 
+		<include refid="Base_Column_List"></include>
 		from venux_wqw_shop where dr=1
 		and type_id=#{typeId}
 		and category_id=#{categoryId}
