@@ -17,7 +17,7 @@ $(function(){
 function loadDataByNoParam(){
 	var type_id = $(this).attr("ty-id");
 	var category_id = $(this).attr("ct-id");
-	doLoadData(type_id,category_id)
+	doLoadData(type_id,category_id);
 }
 
 function loadData(type_id,category_id){
