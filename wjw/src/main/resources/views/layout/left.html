@@ -25,8 +25,6 @@
 <div class="am-cf admin-main"> 
 
 <div class="nav-navicon admin-main admin-sidebar">
-    
-    
     <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
     <div class="sideMenu">
       <h3 class="am-icon-flag"><em></em> <a href="#">商品管理</a></h3>
@@ -34,10 +32,9 @@
         <li><a href="${basePath}/goods/"  target="iframeContent">商品列表</a></li>
         <li ><a href="${basePath}/goods/add" target="iframeContent">添加新商品</a></li>
         <li ><a href="${basePath}/goods/type" target="iframeContent">商品分类</a></li>
-        <li class="func">用户评论</li>
-        <li>商品回收站</li>
-        <li>库存管理 </li>
+        <li ><a href="${basePath}/column/" target="iframeContent">导航栏目</a></li>
       </ul>
+      <!--  
       <h3 class="am-icon-cart-plus"><em></em> <a href="#"> 订单管理</a></h3>
       <ul>
         <li>订单列表</li>
@@ -75,6 +72,7 @@
         <li>平台设置</li>
         <li>声音文件</li>
       </ul>
+      -->
     </div>
     <!-- sideMenu End --> 
     
@@ -89,12 +87,7 @@
 				returnDefault:true //鼠标从.sideMen移走后返回默认状态（默认false）
 				});
 		</script> 
-
 </div>
-
-
-
-
 </div>
 
 <!--[if lt IE 9]>
@@ -108,8 +101,6 @@
 <!--[if (gte IE 9)|!(IE)]><!--> 
 <script src="${basePath}/js/amazeui.min.js"></script>
 <!--<![endif]-->
-
-
 
 </body>
 </html>
