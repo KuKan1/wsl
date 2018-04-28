@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsl.wjw.mapper.ShopMapper">
+
+  <resultMap id="BaseResultMap" type="com.wsl.wjw.dto.ShopDto" >
+    <id column="id" property="id" jdbcType="NUMERIC" />
+    <result column="type_id" property="typeId" jdbcType="NUMERIC" />
+    <result column="category_id" property="categoryId" jdbcType="NUMERIC" />
+    <result column="vname" property="vname" jdbcType="VARCHAR" />
+    <result column="original_price" property="originalPrice" jdbcType="NUMERIC" />
+    <result column="coupon_price" property="couponPrice" jdbcType="NUMERIC" />
+    <result column="vurl" property="vurl" jdbcType="VARCHAR" />
+    <result column="vcover" property="vcover" jdbcType="VARCHAR" />
+    <result column="is_visible" property="isVisible" jdbcType="INTEGER" />
+    <result column="ts" property="ts" jdbcType="DATE" />
+    <result column="dr" property="dr" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, type_id,category_id, vname,original_price,coupon_price,vurl,vcover,is_visible,ts,dr
+  </sql>
+  	
+  	<!-- 根据typeId查询所有商品卷 -->
+	<select id="queryShopByTypeId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		select 
+		<include refid="Base_Column_List"></include>
+		from venux_wqw_shop where dr=1 and type_id=#{typeId}
+	</select>
+	<!-- 根据查询typeId下categoryId类型DTO -->
+	<select id="queryShopByCategoryId"  parameterType="com.wsl.wjw.dto.query.ShopQueryParam"  resultMap="BaseResultMap">
+		select 
+		<include refid="Base_Column_List"></include>
+		from venux_wqw_shop where dr=1
+		and type_id=#{typeId}
+		and category_id=#{categoryId}
+	</select>
+  
+</mapper>

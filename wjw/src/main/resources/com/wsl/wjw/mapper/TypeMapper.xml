@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsl.wjw.mapper.TypeMapper">
+
+  <resultMap id="BaseResultMap" type="com.wsl.wjw.dto.TypeDto" >
+    <id column="id" property="id" jdbcType="NUMERIC" />
+    <result column="vcode" property="vcode" jdbcType="VARCHAR" />
+    <result column="vname" property="vname" jdbcType="VARCHAR" />
+    <result column="ts" property="ts" jdbcType="DATE" />
+    <result column="dr" property="dr" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, vcode, vname,vshort,ts,dr
+  </sql>
+  	
+  	<!-- 根据id查询类型DTO -->
+	<select id="queryTypeDtoById" parameterType="java.lang.Long" resultType="com.wsl.wjw.dto.TypeDto">
+		select 
+		<include refid="Base_Column_List"></include>
+		from venux_wqw_type where dr=1 and id=#{id}
+	</select>
+	<!-- 根据查询所有类型DTO -->
+	<select id="queryAllTypeDto" resultType="com.wsl.wjw.dto.TypeDto">
+		select <include refid="Base_Column_List"></include> from venux_wqw_type where dr=1
+	</select>
+  
+</mapper>

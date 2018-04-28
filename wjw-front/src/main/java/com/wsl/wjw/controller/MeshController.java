@@ -1,6 +1,5 @@
 package com.wsl.wjw.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,12 +27,7 @@ public class MeshController {
 		}else{
 			return "/help";  
 		}
-		
-		List list = new ArrayList();
-		for(int i = 0; i < 8; i++){
-			list.add(i+1);
-		}
-		map.put("list", list);
+
 		return "/"+page;  
     }
 	
