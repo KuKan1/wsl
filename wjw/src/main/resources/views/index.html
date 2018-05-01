@@ -1,478 +1,261 @@
-<!doctype html>
-<html class="no-js">
+﻿<!DOCTYPE HTML>
+<html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>网券网-后台管理</title>
-<meta name="description" content="这是一个 index 页面">
-<meta name="keywords" content="index">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="renderer" content="webkit">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<link rel="icon" type="image/png" href="${basePath}/i/favicon.png">
-<link rel="apple-touch-icon-precomposed" href="${basePath}/i/app-icon72x72@2x.png">
-<meta name="apple-mobile-web-app-title" content="Amaze UI" />
-<link rel="stylesheet" href="${basePath}/css/amazeui.min.css"/>
-<link rel="stylesheet" href="${basePath}/css/admin.css">
-<script src="${basePath}/js/jquery.min.js"></script>
-<script src="${basePath}/js/app.js"></script>
-</head>
-<body>
-<!--[if lte IE 9]><p class="browsehappy">升级你的浏览器吧！ <a href="http://se.360.cn/" target="_blank">升级浏览器</a>以获得更好的体验！</p><![endif]-->
-</head>
-
-<body>
-<header class="am-topbar admin-header">
-  <div class="am-topbar-brand"><img src="${basePath}/i/logo.png"></div>
-
-  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
-    <ul class="am-nav am-nav-pills am-topbar-nav admin-header-list">
-
-   <li class="am-dropdown tognzhi" data-am-dropdown>
-  <button class="am-btn am-btn-primary am-dropdown-toggle am-btn-xs am-radius am-icon-bell-o" data-am-dropdown-toggle> 消息管理<span class="am-badge am-badge-danger am-round">6</span></button>
-  <ul class="am-dropdown-content">
-  	
-  	
-  	
-    <li class="am-dropdown-header">所有消息都在这里</li>
-
-    
-
-    <li><a href="#">未激活会员 <span class="am-badge am-badge-danger am-round">556</span></a></li>
-    <li><a href="#">未激活代理 <span class="am-badge am-badge-danger am-round">69</span></a></a></li>
-    <li><a href="#">未处理汇款</a></li>
-    <li><a href="#">未发放提现</a></li>
-    <li><a href="#">未发货订单</a></li>
-    <li><a href="#">低库存产品</a></li>
-    <li><a href="#">信息反馈</a></li>
-    
-    
-    
-  </ul>
-</li>
-
- <li class="kuanjie">
- 	
- 	<a href="#">会员管理</a>          
- 	<a href="#">奖金管理</a> 
- 	<a href="#">订单管理</a>   
- 	<a href="#">产品管理</a> 
- 	<a href="#">个人中心</a> 
- 	 <a href="#">系统设置</a>
- </li>
-
- <li class="soso">
- 	
-<p>   
-	
-	<select data-am-selected="{btnWidth: 70, btnSize: 'sm', btnStyle: 'default'}">
-          <option value="b">全部</option>
-          <option value="o">产品</option>
-          <option value="o">会员</option>
-          
-        </select>
-
-</p>
-
-<p class="ycfg"><input type="text" class="am-form-field am-input-sm" placeholder="圆角表单域" /></p>
-<p><button class="am-btn am-btn-xs am-btn-default am-xiao"><i class="am-icon-search"></i></button></p>
- </li>
-
-
-
-
-      <li class="am-hide-sm-only" style="float: right;"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
-    </ul>
-  </div>
-</header>
-
-<div class="am-cf admin-main"> 
-
-<div class="nav-navicon admin-main admin-sidebar">
-    
-    
-    <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎系统管理员：清风抚雪</div>
-    <div class="sideMenu">
-      <h3 class="am-icon-flag"><em></em> <a href="#">商品管理</a></h3>
-      <ul>
-        <li><a href="${basePath}/goods/">商品列表</a></li>
-        <li ><a href="${basePath}/goods/add">添加新商品</a></li>
-        <li ><a href="${basePath}/goods/type">商品分类</a></li>
-        <li class="func">用户评论</li>
-        <li>商品回收站</li>
-        <li>库存管理 </li>
-      </ul>
-      <h3 class="am-icon-cart-plus"><em></em> <a href="#"> 订单管理</a></h3>
-      <ul>
-        <li>订单列表</li>
-        <li>合并订单</li>
-        <li>订单打印</li>
-        <li>添加订单</li>
-        <li>发货单列表</li>
-        <li>换货单列表</li>
-      </ul>
-      <h3 class="am-icon-users"><em></em> <a href="#">会员管理</a></h3>
-      <ul>
-        <li>会员列表 </li>
-        <li>未激活会员</li>
-        <li>团队系谱图</li>
-        <li>会员推荐图</li>
-        <li>推荐列表</li>
-      </ul>
-      <h3 class="am-icon-volume-up"><em></em> <a href="#">信息通知</a></h3>
-      <ul>
-        <li>站内消息 /留言 </li>
-        <li>短信</li>
-        <li>邮件</li>
-        <li>微信</li>
-        <li>客服</li>
-      </ul>
-      <h3 class="am-icon-gears"><em></em> <a href="#">系统设置</a></h3>
-      <ul>
-        <li>数据备份</li>
-        <li>邮件/短信管理</li>
-        <li>上传/下载</li>
-        <li>权限</li>
-        <li>网站设置</li>
-        <li>第三方支付</li>
-        <li>提现 /转账 出入账汇率</li>
-        <li>平台设置</li>
-        <li>声音文件</li>
-      </ul>
-    </div>
-    <!-- sideMenu End --> 
-    
-    <script type="text/javascript">
-			jQuery(".sideMenu").slide({
-				titCell:"h3", //鼠标触发对象
-				targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
-				effect:"slideDown", //targetCell下拉效果
-				delayTime:300 , //效果时间
-				triggerTime:150, //鼠标延迟触发时间（默认150）
-				defaultPlay:true,//默认是否执行效果（默认true）
-				returnDefault:true //鼠标从.sideMen移走后返回默认状态（默认false）
-				});
-		</script> 
-</div>
-
-<div class=" admin-content">
-		<div class="daohang">
-			<ul>
-				<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs"> 首页 </li>
-				<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">帮助中心<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
-				<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">奖金管理<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
-				<li><button type="button" class="am-btn am-btn-default am-radius am-btn-xs">产品管理<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close="">×</a></button></li>
-			</ul>
-</div>
-
-<div class="admin">
-   <div class="admin-index">
-      <dl data-am-scrollspy="{animation: 'slide-right', delay: 100}">
-        <dt class="qs"><i class="am-icon-users"></i></dt>
-        <dd>455</dd>
-        <dd class="f12">团队数量</dd>
-      </dl>
-      <dl data-am-scrollspy="{animation: 'slide-right', delay: 300}">
-        <dt class="cs"><i class="am-icon-area-chart"></i></dt>
-        <dd>455</dd>
-        <dd class="f12">今日收入</dd>
-      </dl>
-      <dl data-am-scrollspy="{animation: 'slide-right', delay: 600}">
-        <dt class="hs"><i class="am-icon-shopping-cart"></i></dt>
-        <dd>455</dd>
-        <dd class="f12">商品数量</dd>
-      </dl>
-      <dl data-am-scrollspy="{animation: 'slide-right', delay: 900}">
-        <dt class="ls"><i class="am-icon-cny"></i></dt>
-        <dd>455</dd>
-        <dd class="f12">全部收入</dd>
-      </dl>
-    </div>
-    <div class="admin-biaoge">
-      <div class="xinxitj">信息概况</div>
-      <table class="am-table">
-        <thead>
-          <tr>
-            <th>团队统计</th>
-            <th>全部会员</th>
-            <th>全部未激活</th>
-            <th>今日新增</th>
-            <th>今日未激活</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>普卡</td>
-            <td>普卡</td>
-            <td><a href="#">4534</a></td>
-            <td>+20</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>银卡</td>
-            <td>银卡</td>
-            <td>4534</td>
-            <td>+2</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>金卡</td>
-            <td>金卡</td>
-            <td>4534</td>
-            <td>+10</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>钻卡</td>
-            <td>钻卡</td>
-            <td>4534</td>
-            <td>+50</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>合计</td>
-            <td>合计</td>
-            <td>4534</td>
-            <td>+50</td>
-            <td> 4534 </td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="am-table">
-        <thead>
-          <tr>
-            <th>团队统计</th>
-            <th>全部会员</th>
-            <th>全部未激活</th>
-            <th>今日新增</th>
-            <th>今日未激活</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>普卡</td>
-            <td>普卡</td>
-            <td>4534</td>
-            <td>+50</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>银卡</td>
-            <td>银卡</td>
-            <td>4534</td>
-            <td>+2</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>金卡</td>
-            <td>金卡</td>
-            <td>4534</td>
-            <td>+10</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>钻卡</td>
-            <td>钻卡</td>
-            <td>4534</td>
-            <td>+50</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>合计</td>
-            <td>合计</td>
-            <td>4534</td>
-            <td>+50</td>
-            <td> 4534 </td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="am-table">
-        <thead>
-          <tr>
-            <th>资金统计</th>
-            <th>账户总收入</th>
-            <th>账户总支出</th>
-            <th>账户余额</th>
-            <th>今日收入</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>普卡</td>
-            <td>普卡</td>
-            <td>4534</td>
-            <td>+20</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>银卡</td>
-            <td>银卡</td>
-            <td>4534</td>
-            <td>+2</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>金卡</td>
-            <td>金卡</td>
-            <td>4534</td>
-            <td>+10</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>钻卡</td>
-            <td>钻卡</td>
-            <td>4534</td>
-            <td>+50</td>
-            <td> 4534 </td>
-          </tr>
-          <tr>
-            <td>合计</td>
-            <td>合计</td>
-            <td>4534</td>
-            <td>+50</td>
-            <td> 4534 </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="shuju">
-      <div class="shujuone">
-        <dl>
-          <dt>全盘收入：  1356666</dt>
-          <dt>全盘支出：   5646465.98</dt>
-          <dt>全盘利润：  546464</dt>
-        </dl>
-        <ul>
-          <h2>26.83%</h2>
-          <li>全盘拨出</li>
-        </ul>
-      </div>
-      <div class="shujutow">
-        <dl>
-          <dt>全盘收入：  1356666</dt>
-          <dt>全盘支出：   5646465.98</dt>
-          <dt>全盘利润：  546464</dt>
-        </dl>
-        <ul>
-          <h2>26.83%</h2>
-          <li>全盘拨出</li>
-        </ul>
-      </div>
-      <div class="slideTxtBox">
-        <div class="hd">
-          <ul>
-            <li>其他信息</li>
-            <li>工作进度表</li>
-          </ul>
-        </div>
-        <div class="bd">
-          <ul>
-            <table width="100%" class="am-table">
-              <tbody>
-                <tr>
-                  <td width="7%"  align="center">1 </td>
-                  <td width="83%" >工作进度名称</td>
-                  <td width="10%"  align="center"><a href="#">10%</a></td>
-                </tr>
-                <tr>
-                  <td align="center">1 </td>
-                  <td>工作进度名称</td>
-                  <td  align="center"><a href="#">10%</a></td>
-                </tr>
-                <tr>
-                  <td  align="center">1 </td>
-                  <td>工作进度名称</td>
-                  <td  align="center"><a href="#">10%</a></td>
-                </tr>
-                <tr>
-                  <td  align="center">1 </td>
-                  <td>工作进度名称</td>
-                  <td  align="center"><a href="#">10%</a></td>
-                </tr>
-                
-                <tr>
-                  <td  align="center">1 </td>
-                  <td>工作进度名称</td>
-                  <td  align="center"><a href="#">10%</a></td>
-                </tr>
-                
-                <tr>
-                  <td  align="center">1 </td>
-                  <td>工作进度名称</td>
-                  <td  align="center"><a href="#">10%</a></td>
-                </tr>
-                
-                <tr>
-                  <td  align="center">1 </td>
-                  <td>工作进度名称</td>
-                  <td  align="center"><a href="#">10%</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </ul>
-          <ul>
-            <table class="am-table">
-              <tbody>
-                <tr>
-                  <td>普卡</td>
-                  <td>普卡</td>
-                  <td><a href="#">4534</a></td>
-                  <td>+20</td>
-                  <td> 4534 </td>
-                </tr>
-                <tr>
-                  <td>银卡</td>
-                  <td>银卡</td>
-                  <td>4534</td>
-                  <td>+2</td>
-                  <td> 4534 </td>
-                </tr>
-                <tr>
-                  <td>金卡</td>
-                  <td>金卡</td>
-                  <td>4534</td>
-                  <td>+10</td>
-                  <td> 4534 </td>
-                </tr>
-                <tr>
-                  <td>钻卡</td>
-                  <td>钻卡</td>
-                  <td>4534</td>
-                  <td>+50</td>
-                  <td> 4534 </td>
-                </tr>
-                <tr>
-                  <td>合计</td>
-                  <td>合计</td>
-                  <td>4534</td>
-                  <td>+50</td>
-                  <td> 4534 </td>
-                </tr>
-              </tbody>
-            </table>
-          </ul>
-        </div>
-      </div>
-      <script type="text/javascript">jQuery(".slideTxtBox").slide();</script> 
-   
-</div>
-    <div class="foods">
-    	<ul>版权所有@2018 .</dl>
-    </div>
-</div>
-</div>
-</div>
+<link rel="Bookmark" href="${basePath}/images/favicon.ico" >
+<link rel="Shortcut Icon" href="${basePath}/images/favicon.ico" />
 <!--[if lt IE 9]>
-<script src="${basePath}/js/jquery.min.js"></script>
-<script src="${basePath}/js/modernizr.js"></script>
-<script src="${basePath}/js/polyfill/rem.min.js"></script>
-<script src="${basePath}/js/polyfill/respond.min.js"></script>
-<script src="${basePath}/js/amazeui.legacy.js"></script>
-<![endif]--> 
+<script type="text/javascript" src="${basePath}/lib/html5shiv.js"></script>
+<script type="text/javascript" src="${basePath}/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="${basePath}/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="${basePath}/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="${basePath}/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="${basePath}/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="${basePath}/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="${basePath}/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>H-ui.admin v3.1</title>
+<meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+<meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+<body>
+<header class="navbar-wrapper">
+	<div class="navbar navbar-fixed-top">
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">H-ui.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a> 
+			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v3.1</span> 
+			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+			<nav class="nav navbar-nav">
+				<ul class="cl">
+					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
+						<ul class="dropDown-menu menu radius box-shadow">
+							<li><a href="javascript:;" onclick="article_add('添加资讯','article-add.html')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
+							<li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
+							<li><a href="javascript:;" onclick="product_add('添加资讯','product-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
+							<li><a href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+			<ul class="cl">
+				<li>超级管理员</li>
+				<li class="dropDown dropDown_hover">
+					<a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+					<ul class="dropDown-menu menu radius box-shadow">
+						<li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
+						<li><a href="#">切换账户</a></li>
+						<li><a href="#">退出</a></li>
+				</ul>
+			</li>
+				<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
+				<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
+					<ul class="dropDown-menu menu radius box-shadow">
+						<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
+						<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
+						<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
+						<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
+						<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
+						<li><a href="javascript:;" data-val="orange" title="橙色">橙色</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+</header>
+<aside class="Hui-aside">
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="article-list.html" data-title="资讯管理" href="javascript:void(0)">资讯管理</a></li>
+			</ul>
+		</dd>
+	</dl>
+		<dl id="menu-picture">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="picture-list.html" data-title="图片管理" href="javascript:void(0)">图片管理</a></li>
+			</ul>
+		</dd>
+	</dl>
+		<dl id="menu-product">
+			<dt><i class="Hui-iconfont">&#xe620;</i> 产品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="product/brand/index" data-title="品牌管理" href="javascript:void(0)">品牌管理</a></li>
+					<li><a data-href="product/category/index" data-title="分类管理" href="javascript:void(0)">分类管理</a></li>
+					<li><a data-href="product/index" data-title="产品管理" href="javascript:void(0)">产品管理</a></li>
+			</ul>
+		</dd>
+	</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="http://h-ui.duoshuo.com/admin/" data-title="评论列表" href="javascript:;">评论列表</a></li>
+					<li><a data-href="feedback-list.html" data-title="意见反馈" href="javascript:void(0)">意见反馈</a></li>
+			</ul>
+		</dd>
+	</dl>
+		<dl id="menu-member">
+			<dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="member-list.html" data-title="会员列表" href="javascript:;">会员列表</a></li>
+					<li><a data-href="member-del.html" data-title="删除的会员" href="javascript:;">删除的会员</a></li>
+					<li><a data-href="member-level.html" data-title="等级管理" href="javascript:;">等级管理</a></li>
+					<li><a data-href="member-scoreoperation.html" data-title="积分管理" href="javascript:;">积分管理</a></li>
+					<li><a data-href="member-record-browse.html" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li>
+					<li><a data-href="member-record-download.html" data-title="下载记录" href="javascript:void(0)">下载记录</a></li>
+					<li><a data-href="member-record-share.html" data-title="分享记录" href="javascript:void(0)">分享记录</a></li>
+			</ul>
+		</dd>
+	</dl>
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="admin-role.html" data-title="角色管理" href="javascript:void(0)">角色管理</a></li>
+					<li><a data-href="admin-permission.html" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
+					<li><a data-href="admin-list.html" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
+			</ul>
+		</dd>
+	</dl>
+		<dl id="menu-tongji">
+			<dt><i class="Hui-iconfont">&#xe61a;</i> 系统统计<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="charts-1.html" data-title="折线图" href="javascript:void(0)">折线图</a></li>
+					<li><a data-href="charts-2.html" data-title="时间轴折线图" href="javascript:void(0)">时间轴折线图</a></li>
+					<li><a data-href="charts-3.html" data-title="区域图" href="javascript:void(0)">区域图</a></li>
+					<li><a data-href="charts-4.html" data-title="柱状图" href="javascript:void(0)">柱状图</a></li>
+					<li><a data-href="charts-5.html" data-title="饼状图" href="javascript:void(0)">饼状图</a></li>
+					<li><a data-href="charts-6.html" data-title="3D柱状图" href="javascript:void(0)">3D柱状图</a></li>
+					<li><a data-href="charts-7.html" data-title="3D饼状图" href="javascript:void(0)">3D饼状图</a></li>
+			</ul>
+		</dd>
+	</dl>
+		<dl id="menu-system">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="system-base.html" data-title="系统设置" href="javascript:void(0)">系统设置</a></li>
+					<li><a data-href="system-category.html" data-title="栏目管理" href="javascript:void(0)">栏目管理</a></li>
+					<li><a data-href="system-data.html" data-title="数据字典" href="javascript:void(0)">数据字典</a></li>
+					<li><a data-href="system-shielding.html" data-title="屏蔽词" href="javascript:void(0)">屏蔽词</a></li>
+					<li><a data-href="system-log.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
+			</ul>
+		</dd>
+	</dl>
+</div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<section class="Hui-article-box">
+	<div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
+		<div class="Hui-tabNav-wp">
+			<ul id="min_title_list" class="acrossTab cl">
+				<li class="active">
+					<span title="我的桌面" data-href="welcome.html">我的桌面</span>
+					<em></em></li>
+		</ul>
+	</div>
+		<div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
+</div>
+	<div id="iframe_box" class="Hui-article">
+		<div class="show_iframe">
+			<div style="display:none" class="loading"></div>
+			<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+	</div>
+</div>
+</section>
 
-<!--[if (gte IE 9)|!(IE)]><!--> 
-<script src="${basePath}/js/amazeui.min.js"></script>
-<!--<![endif]-->
+<div class="contextMenu" id="Huiadminmenu">
+	<ul>
+		<li id="closethis">关闭当前 </li>
+		<li id="closeall">关闭全部 </li>
+</ul>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="${basePath}/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="${basePath}/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="${basePath}/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="${basePath}/h-ui.admin/js/H-ui.admin.js"></script> 
+<!--/_footer 作为公共模版分离出去-->
 
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="${basePath}/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script type="text/javascript">
+$(function(){
+	/*$("#min_title_list li").contextMenu('Huiadminmenu', {
+		bindings: {
+			'closethis': function(t) {
+				console.log(t);
+				if(t.find("i")){
+					t.find("i").trigger("click");
+				}		
+			},
+			'closeall': function(t) {
+				alert('Trigger was '+t.id+'\nAction was Email');
+			},
+		}
+	});*/
+});
+/*个人信息*/
+function myselfinfo(){
+	layer.open({
+		type: 1,
+		area: ['300px','200px'],
+		fix: false, //不固定
+		maxmin: true,
+		shade:0.4,
+		title: '查看信息',
+		content: '<div>管理员信息</div>'
+	});
+}
+
+/*资讯-添加*/
+function article_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*图片-添加*/
+function picture_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*产品-添加*/
+function product_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*用户-添加*/
+function member_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+
+
+</script> 
 </body>
 </html>

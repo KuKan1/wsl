@@ -15,4 +15,13 @@ public interface CategoryMapper {
 	 * @throws Exception
 	 */
 	List<CategoryDto> queryCategoryListByTypeId(@Param("typeId") Long typeId) throws Exception;
+	
+	/**
+	 * 查询所有分类
+	 * @param typeId
+	 * @return
+	 * @throws Exception
+	 */
+	List<CategoryDto> queryCategoryList() throws Exception;
+	
 }
