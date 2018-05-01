@@ -2,12 +2,15 @@ package com.wsl.wjw.controller.product;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.wsl.wjw.dto.CategoryDto;
 import com.wsl.wjw.dto.back.CategoryTreeDto;
 import com.wsl.wjw.service.CategoryService;
 
@@ -25,8 +28,13 @@ public class CategoryController {
     }
 	
 	@RequestMapping(value = "/add")
-    public String add(ModelAndView modelAndView) {
-		
+    public String add(HttpServletRequest request,ModelAndView modelAndView) throws Exception {
+		String id_param = request.getParameter("id");
+		if(id_param != null){
+			String id = id_param.split("[.]")[0];
+			CategoryDto categoryDto = categoryService.queryCategoryListById(Long.valueOf(id));
+			modelAndView.addObject("categoryDto", categoryDto);
+		}
 		return "/product/product-category-add";  
     }
 	

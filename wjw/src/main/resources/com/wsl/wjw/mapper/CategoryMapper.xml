@@ -26,7 +26,7 @@
 		where c.dr=1
 	</select>
   	
-  	<!-- 根据id查询类型DTO -->
+  	<!-- 根据TypeId查询类型DTO -->
 	<select id="queryCategoryListByTypeId" parameterType="java.lang.Long" resultType="com.wsl.wjw.dto.CategoryDto">
 		select 
 		c.id, c.p_id as pId,c.type_id as typeId,c.vcode, c.vname,c.ts,c.dr,t.vname as typeName
@@ -34,6 +34,16 @@
 		left join venux_wqw_type t
 		on c.type_id = t.id
 		where c.dr=1 and c.type_id=#{typeId}
+	</select>
+  
+  <!-- 根据id查询类型DTO -->
+	<select id="queryCategoryListById" parameterType="java.lang.Long" resultType="com.wsl.wjw.dto.CategoryDto">
+		select 
+		c.id, c.p_id as pId,c.type_id as typeId,c.vcode, c.vname,c.ts,c.dr,t.vname as typeName
+		from venux_wqw_category c 
+		left join venux_wqw_type t
+		on c.type_id = t.id
+		where c.dr=1 and c.id=#{id}
 	</select>
   
 </mapper>

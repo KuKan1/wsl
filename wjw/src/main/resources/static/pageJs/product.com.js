@@ -38,13 +38,13 @@ var setting = {
 		}
 	},
 	callback: {
-		beforeClick: function(treeId, treeNode) {debugger
-			var zTree = $.fn.zTree.getZTreeObj("tree");
+		beforeClick: function(treeId, treeNode) {
+			//var zTree = $.fn.zTree.getZTreeObj("tree");
 			if (treeNode.isParent) {
-				zTree.expandNode(treeNode);
+				//zTree.expandNode(treeNode);
 				return false;
 			} else {
-				demoIframe.attr("src",treeNode.file + ".html");
+				$("#catetoryIframe").attr("src",treeNode.file + ".html");
 				return true;
 			}
 		}

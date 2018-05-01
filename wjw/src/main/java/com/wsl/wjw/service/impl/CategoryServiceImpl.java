@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,10 +47,19 @@ public class CategoryServiceImpl implements CategoryService {
 				categoryTreeDto.setId(Long.valueOf(id));
 				categoryTreeDto.setName(categoryDto.getVname());
 				categoryTreeDto.setpId(categoryDto.getTypeId());
+				//categoryTreeDto.setUrl("/product/category/add?id="+categoryDto.getId());
+				//categoryTreeDto.setTarget("catetoryIframe");
+				categoryTreeDto.setFile("/product/category/add?id="+categoryDto.getId());
 				categoryTree.add(categoryTreeDto);
 			}
 		}
 		return categoryTree;
+	}
+	
+	@Override
+	public CategoryDto queryCategoryListById(Long id) throws Exception{
+		
+		return categoryMapper.queryCategoryListById(id);
 	}
 	
 }

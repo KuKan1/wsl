@@ -6,6 +6,8 @@ public class CategoryTreeDto {
 	private Long pId;
 	private String name;
 	private boolean open;
+	private String file;
+	
 	public Long getId() {
 		return id;
 	}
@@ -29,6 +31,12 @@ public class CategoryTreeDto {
 	}
 	public void setOpen(boolean open) {
 		this.open = open;
+	}
+	public String getFile() {
+		return file;
+	}
+	public void setFile(String file) {
+		this.file = file;
 	}
 	
 	
