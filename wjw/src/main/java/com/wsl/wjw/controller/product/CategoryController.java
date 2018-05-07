@@ -1,6 +1,7 @@
 package com.wsl.wjw.controller.product;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -28,12 +29,12 @@ public class CategoryController {
     }
 	
 	@RequestMapping(value = "/add")
-    public String add(HttpServletRequest request,ModelAndView modelAndView) throws Exception {
+    public String add(HttpServletRequest request,Map<String,Object> map) throws Exception {
 		String id_param = request.getParameter("id");
 		if(id_param != null){
 			String id = id_param.split("[.]")[0];
 			CategoryDto categoryDto = categoryService.queryCategoryListById(Long.valueOf(id));
-			modelAndView.addObject("categoryDto", categoryDto);
+			map.put("categoryDto", categoryDto);
 		}
 		return "/product/product-category-add";  
     }
