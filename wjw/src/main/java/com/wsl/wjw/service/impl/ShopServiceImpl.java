@@ -29,4 +29,19 @@ public class ShopServiceImpl implements ShopService {
 		return shopMapper.queryShopByCategoryId(shopQueryParam);
 	}
 
+	@Override
+	public int insertSelective(ShopDto shopDto) throws Exception {
+		return shopMapper.insertSelective(shopDto);
+	}
+
+	@Override
+	public int deleteByPrimaryKey(Long id) throws Exception {
+		return shopMapper.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public int updateByPrimaryKeySelective(ShopDto shopDto) throws Exception {
+		return shopMapper.updateByPrimaryKeySelective(shopDto);
+	}
+
 }

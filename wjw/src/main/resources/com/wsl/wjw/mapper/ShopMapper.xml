@@ -34,5 +34,148 @@
 		and type_id=#{typeId}
 		and category_id=#{categoryId}
 	</select>
+	<!-- 非空插入 -->
+	<insert id="insertSelective" parameterType="com.wsl.wjw.dto.ShopDto">
+    insert into venux_wqw_shop
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="categoryId != null">
+        category_id,
+      </if>
+      <if test="vname != null">
+        vname,
+      </if>
+      <if test="originalPrice != null">
+        original_price,
+      </if>
+      <if test="couponPrice != null">
+        coupon_price,
+      </if>
+      <if test="vurl != null">
+        vurl,
+      </if>
+      <if test="vcover != null">
+        vcover,
+      </if>
+      <if test="isVisible != null">
+        is_visible,
+      </if>
+      <if test="ts != null">
+        ts,
+      </if>
+      <if test="dr != null">
+        dr,
+      </if>
+      <if test="vdef1 != null">
+        vdef1,
+      </if>
+      <if test="vdef2 != null">
+        vdef2,
+      </if>
+      <if test="vdef3 != null">
+        vdef3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="categoryId != null">
+        #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="vname != null">
+        #{vname,jdbcType=VARCHAR},
+      </if>
+      <if test="originalPrice != null">
+        #{originalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="couponPrice != null">
+        #{couponPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="vurl != null">
+        #{vurl,jdbcType=VARCHAR},
+      </if>
+      <if test="vcover != null">
+        #{vcover,jdbcType=VARCHAR},
+      </if>
+      <if test="isVisible != null">
+        #{isVisible,jdbcType=SMALLINT},
+      </if>
+      <if test="ts != null">
+        #{ts,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dr != null">
+        #{dr,jdbcType=SMALLINT},
+      </if>
+      <if test="vdef1 != null">
+        #{vdef1,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef2 != null">
+        #{vdef2,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef3 != null">
+        #{vdef3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <!-- id删除 -->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from venux_wqw_shop
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <!-- 非空更新 -->
+  <update id="updateByPrimaryKeySelective" parameterType="com.wsl.wjw.dto.ShopDto">
+    update venux_wqw_shop
+    <set>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="categoryId != null">
+        category_id = #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="vname != null">
+        vname = #{vname,jdbcType=VARCHAR},
+      </if>
+      <if test="originalPrice != null">
+        original_price = #{originalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="couponPrice != null">
+        coupon_price = #{couponPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="vurl != null">
+        vurl = #{vurl,jdbcType=VARCHAR},
+      </if>
+      <if test="vcover != null">
+        vcover = #{vcover,jdbcType=VARCHAR},
+      </if>
+      <if test="isVisible != null">
+        is_visible = #{isVisible,jdbcType=SMALLINT},
+      </if>
+      <if test="ts != null">
+        ts = #{ts,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dr != null">
+        dr = #{dr,jdbcType=SMALLINT},
+      </if>
+      <if test="vdef1 != null">
+        vdef1 = #{vdef1,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef2 != null">
+        vdef2 = #{vdef2,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef3 != null">
+        vdef3 = #{vdef3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
   
 </mapper>

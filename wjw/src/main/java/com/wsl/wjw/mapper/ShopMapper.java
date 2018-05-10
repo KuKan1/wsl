@@ -12,4 +12,10 @@ public interface ShopMapper {
 	public List<ShopDto> queryShopByTypeId(@Param("typeId") Long typeId) throws Exception;
 	
 	public List<ShopDto> queryShopByCategoryId(ShopQueryParam shopQueryParam) throws Exception;
+	
+	public int insertSelective(ShopDto shopDto) throws Exception;
+	
+	int deleteByPrimaryKey(Long id) throws Exception;
+	
+	int updateByPrimaryKeySelective(ShopDto shopDto) throws Exception;
 }
