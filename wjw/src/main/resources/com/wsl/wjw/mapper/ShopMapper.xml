@@ -31,8 +31,12 @@
 		select 
 		<include refid="Base_Column_List"></include>
 		from venux_wqw_shop where dr=1
-		and type_id=#{typeId}
-		and category_id=#{categoryId}
+		<if test="typeId != null and typeId !=0">
+        and type_id=#{typeId},
+      </if>
+      <if test="categoryId != null and categoryId != 0">
+        and category_id=#{categoryId}
+      </if>
 	</select>
 	<!-- 非空插入 -->
 	<insert id="insertSelective" parameterType="com.wsl.wjw.dto.ShopDto">
