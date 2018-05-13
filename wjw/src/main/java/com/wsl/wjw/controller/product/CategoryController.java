@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -43,6 +44,12 @@ public class CategoryController {
 	@RequestMapping(value = "/list")
 	public List<CategoryTreeDto> queryCategoryList() throws Exception{
 		return categoryService.queryCategoryList();
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/{typeId}")
+	public List<CategoryDto> queryCategoryListByType(@PathVariable Long typeId) throws Exception{
+		return categoryService.queryCategoryListByTypeId(typeId);
 	}
 
     

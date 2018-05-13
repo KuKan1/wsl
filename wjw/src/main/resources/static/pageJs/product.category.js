@@ -8,7 +8,7 @@ $(function(){
 });
 
 function queryCategory(){
-	var category_url = CommonVar.app_root+"/category/list";
+	var category_url = CommonVar.app_root+"/product/category/list";
 	$.get(category_url, function(data){
 		createCategoryTree(data);
 	});

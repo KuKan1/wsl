@@ -7,8 +7,11 @@ public class ShopDto {
 	
 	private Long id;
 	private Long typeId;
+	private String typeName;
 	private Long categoryId;
+	private String categoryName;
 	private String vname;
+	private String keys;
 	private BigDecimal originalPrice;
 	private BigDecimal couponPrice;
 	private String vurl;
@@ -19,6 +22,26 @@ public class ShopDto {
 	private String vdef1;
 	private String vdef2;
 	private String vdef3;
+	
+	
+	public String getKeys() {
+		return keys;
+	}
+	public void setKeys(String keys) {
+		this.keys = keys;
+	}
+	public String getTypeName() {
+		return typeName;
+	}
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
 	public Long getId() {
 		return id;
 	}
