@@ -40,7 +40,7 @@ function doLoadData(type_id,category_id){
 			var left_data = data[i];
 			var em_left = '<a href="'+left_data.vurl+'">'+
 				'<li class="border_right fl">'+
-				'<img src="'+left_data.vcover+'" />'+
+				'<img src="http://img.wquanw.com/images/'+left_data.vcover+'" />'+
 				'<span>'+left_data.vname+'</span>'+
 				'<span class="int_color">京东价: ￥'+left_data.originalPrice+'</span>'+
 				'<span class="int_color">券后价: ￥'+left_data.couponPrice+'</span>'+
