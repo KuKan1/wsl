@@ -24,7 +24,7 @@ function queryProduct(type_id,category_id){
 		for (var i = 0; i < len; i+=1) {
 			var pd = data[i];
 			var isVisible = "已发布";
-			if(pd.isVisible == 2){
+			if(pd.isVisible != 'Y'){
 				isVisible = "已下架";
 			}
 			var pd_em = '<tr class="text-c va-m">'+
