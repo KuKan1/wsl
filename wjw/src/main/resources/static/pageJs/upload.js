@@ -530,7 +530,7 @@
      // 文件上传成功，给item添加成功class, 用样式标记上传成功。
     	uploader.on( 'uploadSuccess', function( file,response) {
     		debugger
-    		$( '#'+file.id ).addClass('upload-state-success').find(".state").text("已上传");
+    		$( '#vcover').val(response._raw)
     	});
         
         uploader.on( 'all', function( type ) {

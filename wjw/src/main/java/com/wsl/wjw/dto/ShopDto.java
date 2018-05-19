@@ -16,9 +16,9 @@ public class ShopDto {
 	private BigDecimal couponPrice;
 	private String vurl;
 	private String vcover;
-	private int isVisible;
+	private String isVisible;
 	private Date ts;
-	private int dr;
+	private Integer dr;
 	private String vdef1;
 	private String vdef2;
 	private String vdef3;
@@ -90,10 +90,10 @@ public class ShopDto {
 	public void setVcover(String vcover) {
 		this.vcover = vcover;
 	}
-	public int getIsVisible() {
+	public String getIsVisible() {
 		return isVisible;
 	}
-	public void setIsVisible(int isVisible) {
+	public void setIsVisible(String isVisible) {
 		this.isVisible = isVisible;
 	}
 	public Date getTs() {
@@ -102,10 +102,10 @@ public class ShopDto {
 	public void setTs(Date ts) {
 		this.ts = ts;
 	}
-	public int getDr() {
+	public Integer getDr() {
 		return dr;
 	}
-	public void setDr(int dr) {
+	public void setDr(Integer dr) {
 		this.dr = dr;
 	}
 	public String getVdef1() {

@@ -49,5 +49,11 @@ public class ProductController {
 		return shopService.queryShopByCategoryId(typeId, categoryId);
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="/save")
+	public String save(ShopDto shopDto) throws Exception{
+		int count = shopService.insertSelective(shopDto);
+		return "suc";
+	}
     
 }
