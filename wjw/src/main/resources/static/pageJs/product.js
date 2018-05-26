@@ -28,7 +28,7 @@ function queryProduct(type_id,category_id){
 				isVisible = "已下架";
 			}
 			var pd_em = '<tr class="text-c va-m">'+
-				'<td><input name="" type="checkbox" value=""></td>'+
+				'<td><input name="" class="checkchild" type="checkbox" value="'+pd.id+'"></td>'+
 				'<td>001</td>'+
 				'<td>'+
 				'<a onClick="product_show("'+pd.vname+'","product-show.html","10001")" href="javascript:;">'+
@@ -48,12 +48,58 @@ function queryProduct(type_id,category_id){
 				'<a style="text-decoration:none" class="ml-5" onClick="product_edit("产品编辑","product-add.html","10001")" href="javascript:;" title="编辑">'+
 				'<i class="Hui-iconfont">&#xe6df;</i>'+
 				'</a> '+
-				'<a style="text-decoration:none" class="ml-5" onClick="product_del(this,"10001")" href="javascript:;" title="删除">'+
+				'<a style="text-decoration:none" class="ml-5" onClick="product_del(this,"'+pd.id+'")" href="javascript:;" title="删除">'+
 				'<i class="Hui-iconfont">&#xe6e2;</i>'+
 				'</a>'+
 				'</td></tr>';
 			$(".table > tbody").append(pd_em);
 		}
+	});
+}
+
+
+function datadel(){
+	
+	 var ids = "";
+     $('.checkchild').each(function () {
+         if ($(this).is(':checked')) {
+             ids += $(this).val()+",";
+         } 
+     });
+	
+     if (ids != "") {
+         $.ajax({
+             type: "Post",
+             url: "/product/del",
+             data: ids,
+             contentType: "application/json; charset=utf-8",
+             dataType: "json",
+             success: function (data) {
+                 layer.msg(data.msg);
+             }
+         });
+     } else {
+         layer.msg("请选择行",{offset: ['300px', '700px']});
+         return;
+     }
+}
+
+
+/*产品-删除*/
+function product_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: '',
+			dataType: 'json',
+			success: function(data){
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});
 	});
 }
 

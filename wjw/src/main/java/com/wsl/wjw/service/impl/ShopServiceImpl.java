@@ -44,4 +44,16 @@ public class ShopServiceImpl implements ShopService {
 		return shopMapper.updateByPrimaryKeySelective(shopDto);
 	}
 
+	@Override
+	public boolean batchDel(String ids) throws Exception {
+		if(ids == null){
+			return false;
+		}
+		String[] idArray = ids.split(",");
+		for (String id : idArray) {
+			deleteByPrimaryKey(Long.valueOf(id));
+		}
+		return true;
+	}
+
 }

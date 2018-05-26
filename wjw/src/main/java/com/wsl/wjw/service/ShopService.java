@@ -15,4 +15,6 @@ public interface ShopService {
 	int deleteByPrimaryKey(Long id) throws Exception;
 	
 	int updateByPrimaryKeySelective(ShopDto shopDto) throws Exception;
+	
+	public boolean batchDel(String ids) throws Exception;
 }

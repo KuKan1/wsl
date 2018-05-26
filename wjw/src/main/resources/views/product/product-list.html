@@ -38,7 +38,7 @@
 		</div>
 		<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="product_add('添加产品','/product/add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加产品</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 		<div class="mt-20">
-			<table class="table table-border table-bordered table-bg table-hover table-sort">
+			<table id="table-list" class="table table-border table-bordered table-bg table-hover table-sort">
 				<thead>
 					<tr class="text-c">
 						<th width="40"><input name="" type="checkbox" value=""></th>
@@ -87,8 +87,8 @@
 <script type="text/javascript" src="${basePath}/pageJs/product.js"></script> 
 <script type="text/javascript">
 
-$('.table-sort').dataTable({
-	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+$('#table-list').dataTable({
+	"bSort": false,
 	"bStateSave": true,//状态保存
 	"aoColumnDefs": [
 	  {"orderable":false,"aTargets":[0,7]}// 制定列不参与排序
@@ -168,23 +168,6 @@ function product_edit(title,url,id){
 	layer.full(index);
 }
 
-/*产品-删除*/
-function product_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		$.ajax({
-			type: 'POST',
-			url: '',
-			dataType: 'json',
-			success: function(data){
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!',{icon:1,time:1000});
-			},
-			error:function(data) {
-				console.log(data.msg);
-			},
-		});
-	});
-}
 </script>
 </body>
 </html>

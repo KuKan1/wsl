@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -55,5 +58,16 @@ public class ProductController {
 		int count = shopService.insertSelective(shopDto);
 		return "suc";
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="/del",method=RequestMethod.POST)
+	public String deleteShop(@RequestBody String ids) throws Exception{
+		if(shopService.batchDel(ids)){
+			return "{\"msg\":\"删除成功\"}";
+		}else{
+			return "{\"msg\":\"删除失败\"}";
+		}
+	}
+	
     
 }
