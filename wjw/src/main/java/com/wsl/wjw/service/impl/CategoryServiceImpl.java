@@ -48,7 +48,7 @@ public class CategoryServiceImpl implements CategoryService {
 				categoryTreeDto.setpId(categoryDto.getTypeId());
 				//categoryTreeDto.setUrl("/product/category/add?id="+categoryDto.getId());
 				//categoryTreeDto.setTarget("catetoryIframe");
-				categoryTreeDto.setFile("/product/category/add?id="+categoryDto.getId());
+				categoryTreeDto.setFile("/category/add?id="+categoryDto.getId());
 				categoryTree.add(categoryTreeDto);
 			}
 		}

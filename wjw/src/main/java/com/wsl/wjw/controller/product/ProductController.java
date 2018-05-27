@@ -11,21 +11,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.wsl.wjw.dto.CategoryDto;
 import com.wsl.wjw.dto.ShopDto;
-import com.wsl.wjw.service.CategoryService;
 import com.wsl.wjw.service.ShopService;
 
 @Controller
 @RequestMapping(value = {"/product"})
 public class ProductController {
 	
-	@Autowired
-	private CategoryService categoryService;
 	@Autowired
 	private ShopService shopService;
 	
@@ -35,13 +30,18 @@ public class ProductController {
 		return "/product/product-list";  
     }
 
+	@ResponseBody
+	@RequestMapping(value="/{id}")
+	public ShopDto queryShopById(@PathVariable Long id) throws Exception{
+		return shopService.queryShopById(id);
+	}
+	
 	@RequestMapping(value = "/add")
     public String add(HttpServletRequest request,Map<String,Object> map) throws Exception {
-		String id_param = request.getParameter("id");
-		if(id_param != null){
-			String id = id_param.split("[.]")[0];
-			CategoryDto categoryDto = categoryService.queryCategoryListById(Long.valueOf(id));
-			map.put("categoryDto", categoryDto);
+		String id = request.getParameter("id");
+		if(id != null){
+			ShopDto shopDto = shopService.queryShopById(Long.valueOf(id));
+			map.put("shopDto", shopDto);
 		}
 		return "/product/product-add";  
     }
@@ -53,21 +53,28 @@ public class ProductController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="/save")
+	@RequestMapping(value="/save",method=RequestMethod.POST)
 	public String save(ShopDto shopDto) throws Exception{
-		int count = shopService.insertSelective(shopDto);
-		return "suc";
+		if(shopDto != null){
+			if(shopDto.getId() == null){
+				shopService.insertSelective(shopDto);
+			}else{
+				shopService.updateByPrimaryKeySelective(shopDto);
+			}
+			return "{\"status\":\"S\",\"msg\":\"保存成功\"}";
+		}
+		return "{\"status\":\"E\",\"msg\":\"保存失败\"}";
 	}
+	
 	
 	@ResponseBody
 	@RequestMapping(value="/del",method=RequestMethod.POST)
 	public String deleteShop(@RequestBody String ids) throws Exception{
 		if(shopService.batchDel(ids)){
-			return "{\"msg\":\"删除成功\"}";
+			return "{\"status\":\"S\",\"msg\":\"删除成功\"}";
 		}else{
-			return "{\"msg\":\"删除失败\"}";
+			return "{\"status\":\"E\",\"msg\":\"删除失败\"}";
 		}
 	}
 	
-    
 }

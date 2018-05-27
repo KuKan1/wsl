@@ -23,10 +23,10 @@
 <link rel="stylesheet" href="./../lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
 </head>
 <body class="pos-r">
-<div class="pos-a" style="width:200px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
+<!-- <div class="pos-a" style="width:200px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
 	<ul id="treeCatetory" class="ztree"></ul>
-</div>
-<div style="margin-left:200px;">
+</div> -->
+<div style="">
 	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 产品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 	<div class="page-container">
 		<div class="text-c"> 日期范围：
@@ -36,7 +36,8 @@
 			<input type="text" name="" id="" placeholder=" 产品名称" style="width:250px" class="input-text">
 			<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜产品</button>
 		</div>
-		<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="product_add('添加产品','/product/add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加产品</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+		<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
+		<a class="btn btn-primary radius" onclick="product_add('添加产品','/product/add')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加产品</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 		<div class="mt-20">
 			<table id="table-list" class="table table-border table-bordered table-bg table-hover table-sort">
 				<thead>
@@ -131,41 +132,12 @@ function product_shenhe(obj,id){
     	layer.msg('未通过', {icon:5,time:1000});
 	});	
 }
-/*产品-下架*/
-function product_stop(obj,id){
-	layer.confirm('确认要下架吗？',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
-		$(obj).remove();
-		layer.msg('已下架!',{icon: 5,time:1000});
-	});
-}
-
-/*产品-发布*/
-function product_start(obj,id){
-	layer.confirm('确认要发布吗？',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-		$(obj).remove();
-		layer.msg('已发布!',{icon: 6,time:1000});
-	});
-}
 
 /*产品-申请上线*/
 function product_shenqing(obj,id){
 	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
 	$(obj).parents("tr").find(".td-manage").html("");
 	layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
-}
-
-/*产品-编辑*/
-function product_edit(title,url,id){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
 }
 
 </script>

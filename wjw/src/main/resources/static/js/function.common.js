@@ -3,7 +3,8 @@
  */
 
 var CommonVar ={
-	app_root: getRootPath()
+	app_root: getRootPath(),
+	img_url : "http://img.wquanw.com/images/"
 }
 
 function getRootPath(){

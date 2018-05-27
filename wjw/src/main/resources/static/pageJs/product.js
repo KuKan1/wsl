@@ -8,7 +8,7 @@ $(function(){
 	//查询产品
 	queryProduct(type_id,category_id);
 	//查询分类
-	queryCategory();
+	//queryCategory();
 });
 
 /**
@@ -29,10 +29,10 @@ function queryProduct(type_id,category_id){
 			}
 			var pd_em = '<tr class="text-c va-m">'+
 				'<td><input name="" class="checkchild" type="checkbox" value="'+pd.id+'"></td>'+
-				'<td>001</td>'+
+				'<td>'+pd.id+'</td>'+
 				'<td>'+
 				'<a onClick="product_show("'+pd.vname+'","product-show.html","10001")" href="javascript:;">'+
-				'<img width="60" class="product-thumb" src="temp/product/Thumb/6204.jpg">'+
+				'<img width="60" class="product-thumb" src="'+CommonVar.img_url+pd.vcover+'">'+
 				'</a>'+
 				'</td>'+
 				'<td class="text-l">'+pd.vname+
@@ -42,13 +42,13 @@ function queryProduct(type_id,category_id){
 				'<td><span class="price">'+pd.couponPrice+'</span> 元</td>'+
 				'<td class="td-status"><span class="label label-success radius">'+isVisible+'</span></td>'+
 				'<td class="td-manage">'+
-				'<a style="text-decoration:none" onClick="product_stop(this,"10001")" href="javascript:;" title="下架">'+
+				'<a style="text-decoration:none" onClick="product_stop(this,'+pd.id+')" href="javascript:;" title="下架">'+
 				'<i class="Hui-iconfont">&#xe6de;</i>'+
 				'</a> '+
-				'<a style="text-decoration:none" class="ml-5" onClick="product_edit("产品编辑","product-add.html","10001")" href="javascript:;" title="编辑">'+
+				'<a style="text-decoration:none" class="ml-5" onClick='+"'"+'product_edit("产品编辑","/product/add?id='+pd.id+'",'+pd.id+')'+"'"+' href="javascript:;" title="编辑">'+
 				'<i class="Hui-iconfont">&#xe6df;</i>'+
 				'</a> '+
-				'<a style="text-decoration:none" class="ml-5" onClick="product_del(this,"'+pd.id+'")" href="javascript:;" title="删除">'+
+				'<a style="text-decoration:none" class="ml-5" onClick="product_del(this,'+pd.id+')" href="javascript:;" title="删除">'+
 				'<i class="Hui-iconfont">&#xe6e2;</i>'+
 				'</a>'+
 				'</td></tr>';
@@ -57,7 +57,9 @@ function queryProduct(type_id,category_id){
 	});
 }
 
-
+/**
+ * 批量删除
+ */
 function datadel(){
 	
 	 var ids = "";
@@ -76,6 +78,7 @@ function datadel(){
              dataType: "json",
              success: function (data) {
                  layer.msg(data.msg);
+                 location.replace(location.href);
              }
          });
      } else {
@@ -84,13 +87,33 @@ function datadel(){
      }
 }
 
+/*产品-下架*/
+function product_stop(obj,id){
+	layer.confirm('确认要下架吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
+		$(obj).remove();
+		layer.msg('已下架!',{icon: 5,time:1000});
+	});
+}
+
+/*产品-发布*/
+function product_start(obj,id){
+	layer.confirm('确认要发布吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布!',{icon: 6,time:1000});
+	});
+}
 
 /*产品-删除*/
 function product_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: '',
+			url: '/product/del',
+			data: id,
 			dataType: 'json',
 			success: function(data){
 				$(obj).parents("tr").remove();
@@ -103,11 +126,21 @@ function product_del(obj,id){
 	});
 }
 
+/*产品-编辑*/
+function product_edit(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
 /**
  * 查询分类 
  **/
 function queryCategory(){
-	var category_url = CommonVar.app_root+"/product/category/list";
+	var category_url = CommonVar.app_root+"/category/list";
 	$.get(category_url, function(data){
 		createCategoryTree(data);
 	});

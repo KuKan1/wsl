@@ -12,7 +12,7 @@ import com.wsl.wjw.dto.TypeDto;
 import com.wsl.wjw.service.TypeService;
 
 @Controller
-@RequestMapping(value = {"/product/brand"})
+@RequestMapping(value = {"/brand"})
 public class BrandController {
 	
 	@Autowired

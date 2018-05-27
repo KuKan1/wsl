@@ -9,6 +9,8 @@ import com.wsl.wjw.dto.query.ShopQueryParam;
 
 public interface ShopMapper {
 
+	public ShopDto queryShopById(@Param("id") Long id) throws Exception;
+	
 	public List<ShopDto> queryShopByTypeId(@Param("typeId") Long typeId) throws Exception;
 	
 	public List<ShopDto> queryShopByCategoryId(ShopQueryParam shopQueryParam) throws Exception;

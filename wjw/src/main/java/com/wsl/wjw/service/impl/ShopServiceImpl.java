@@ -17,6 +17,11 @@ public class ShopServiceImpl implements ShopService {
 	private ShopMapper shopMapper;
 	
 	@Override
+	public ShopDto queryShopById(Long id) throws Exception {
+		return shopMapper.queryShopById(id);
+	}
+	
+	@Override
 	public List<ShopDto> queryShopByTypeId(Long typeId) throws Exception {
 		return shopMapper.queryShopByTypeId(typeId);
 	}

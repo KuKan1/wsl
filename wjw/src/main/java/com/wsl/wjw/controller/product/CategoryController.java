@@ -17,7 +17,7 @@ import com.wsl.wjw.dto.back.CategoryTreeDto;
 import com.wsl.wjw.service.CategoryService;
 
 @Controller
-@RequestMapping(value = {"/product/category"})
+@RequestMapping(value = {"/category"})
 public class CategoryController {
 	
 	@Autowired
