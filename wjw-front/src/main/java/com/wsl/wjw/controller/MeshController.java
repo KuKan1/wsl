@@ -21,7 +21,7 @@ public class MeshController {
 	@RequestMapping(value = "/{page}/{model}")
     public String meshOne(@PathVariable String page,@PathVariable Long model, Map<String,Object> map) throws Exception {
 		List<CategoryDto> categoryList = categoryService.queryCategoryListByTypeId(model);
-		if(categoryList != null && categoryList.size() > 1){
+		if(categoryList != null && categoryList.size() > 0){
 			map.put("modelName", categoryList.get(0).getTypeName());
 			map.put("categoryList", categoryList);
 		}else{
