@@ -51,7 +51,7 @@ function doLoadData(type_id,category_id){
 				var right_data = data[i+1];
 				var em_right = '<a href="'+right_data.vurl+'">'+
 					'<li class="fl">'+
-					'<img src="'+right_data.vcover+'" />'+
+					'<img src="'+CommonVar.img_url+right_data.vcover+'" />'+
 					'<span>'+right_data.vname+'</span>'+
 					'<span class="int_color">京东价: ￥'+right_data.originalPrice+'</span>'+
 					'<span class="int_color">券后价: ￥'+right_data.couponPrice+'</span>'+
