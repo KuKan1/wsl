@@ -53,7 +53,7 @@ function doLoadData(type_id,category_id){
 					'<li class="fl">'+
 					'<img src="'+CommonVar.img_url+right_data.vcover+'" />'+
 					'<span>'+right_data.vname+'</span>'+
-					'<span class="int_color">京东价: ￥'+right_data.originalPrice+'</span>'+
+					'<span class="int_color">原价: ￥'+right_data.originalPrice+'</span>'+
 					'<span class="int_color">券后价: ￥'+right_data.couponPrice+'</span>'+
 					'</li>'+
 					'</a>';
