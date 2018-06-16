@@ -17,6 +17,7 @@ public class ShopDto {
 	private String vurl;
 	private String vcover;
 	private String isVisible;
+	private String isGood;
 	private Date ts;
 	private Integer dr;
 	private String vdef1;
@@ -95,6 +96,13 @@ public class ShopDto {
 	}
 	public void setIsVisible(String isVisible) {
 		this.isVisible = isVisible;
+	}
+	
+	public String getIsGood() {
+		return isGood;
+	}
+	public void setIsGood(String isGood) {
+		this.isGood = isGood;
 	}
 	public Date getTs() {
 		return ts;

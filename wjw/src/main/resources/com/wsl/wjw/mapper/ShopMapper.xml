@@ -11,13 +11,14 @@
     <result column="coupon_price" property="couponPrice" jdbcType="NUMERIC" />
     <result column="vurl" property="vurl" jdbcType="VARCHAR" />
     <result column="vcover" property="vcover" jdbcType="VARCHAR" />
-    <result column="is_visible" property="isVisible" jdbcType="INTEGER" />
+    <result column="is_visible" property="isVisible" jdbcType="VARCHAR" />
+    <result column="is_good" property="isGood" jdbcType="VARCHAR" />
     <result column="ts" property="ts" jdbcType="DATE" />
     <result column="dr" property="dr" jdbcType="INTEGER" />
   </resultMap>
   
   <sql id="Base_Column_List" >
-    id, type_id,category_id, vname,original_price,coupon_price,vurl,vcover,is_visible,ts,dr
+    id, type_id,category_id, vname,original_price,coupon_price,vurl,vcover,is_visible,is_good,ts,dr
   </sql>
   	
   	<!-- 根据typeId查询所有商品卷 -->
@@ -80,6 +81,9 @@
       <if test="isVisible != null">
         is_visible,
       </if>
+      <if test="isGood != null">
+        is_good,
+      </if>
       <if test="ts != null">
         ts,
       </if>
@@ -123,6 +127,9 @@
       </if>
       <if test="isVisible != null">
         #{isVisible,jdbcType=SMALLINT},
+      </if>
+      <if test="isGood != null">
+        #{isGood,jdbcType=SMALLINT},
       </if>
       <if test="ts != null">
         #{ts,jdbcType=TIMESTAMP},
@@ -172,7 +179,10 @@
         vcover = #{vcover,jdbcType=VARCHAR},
       </if>
       <if test="isVisible != null">
-        is_visible = #{isVisible,jdbcType=SMALLINT},
+        is_visible = #{isVisible,jdbcType=VARCHAR},
+      </if>
+      <if test="isGood != null">
+        is_good = #{isGood,jdbcType=VARCHAR},
       </if>
       <if test="ts != null">
         ts = #{ts,jdbcType=TIMESTAMP},

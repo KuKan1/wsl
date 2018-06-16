@@ -18,10 +18,14 @@
 							<div class="secskill-content inner_pages topline">
 								<ul class="swiper-wrapper inner_nav">
 									<#list categoryList as category>  
-										<#if category_index ==0><hr/>
-											<li class="swiper-slide inner_con inner_con_style category_id" ct-id="${category.id}" ty-id="${category.typeId}">
-												${category.vname} 
+										<#if category_index == 0><hr/>
+											 <li class="swiper-slide inner_con inner_con_style category_id" ct-id="0" ty-id="${category.typeId}">
+												精选综合
 												<span class="inner_border_con" style="display: block;"></span>
+											</li>
+											<li class="swiper-slide inner_con category_id" ct-id="${category.id}" ty-id="${category.typeId}">
+												${category.vname} 
+												<span class="inner_border_con" ></span>
 											</li>
 										<#else>
 											<li class="swiper-slide inner_con category_id" ct-id="${category.id}" ty-id="${category.typeId}">

@@ -31,8 +31,14 @@
 		select 
 		<include refid="Base_Column_List"></include>
 		from venux_wqw_shop where dr=1 and is_visible='Y'
-		and type_id=#{typeId}
-		and category_id=#{categoryId}
+		<if test="typeId != null and categoryId !=null and typeId != '' and categoryId != ''" >
+			and type_id=#{typeId}
+			and category_id=#{categoryId}
+		</if>
+		<if test="typeId != null  and typeId != '' and categoryId ==null or categoryId==0" >
+			and type_id=#{typeId}
+			and is_good='Y'
+		</if>
 	</select>
   
 </mapper>

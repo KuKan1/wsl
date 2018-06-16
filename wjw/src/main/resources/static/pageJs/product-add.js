@@ -14,6 +14,10 @@ $(function(){
 	if(is_visible == 'Y'){
 		$("#isVisible").attr("checked","checked");
 	}
+	var is_good = $("#is_good").val();
+	if(is_good == 'Y'){
+		$("#isGood").attr("checked","checked");
+	}
 	
 });
 
@@ -42,7 +46,7 @@ function queryCategory(typeId){
 	var category_url = CommonVar.app_root+"/category/"+typeId;
 	$(".select-category").empty();
 	$(".select-category").append('<option value="0">默认</option>');
-	$.get(category_url, function(data){debugger
+	$.get(category_url, function(data){
 		var len = data.length;
 		for (var i = 0; i < len; i+=1) {
 			var cg = data[i];

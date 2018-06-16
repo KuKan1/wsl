@@ -35,6 +35,7 @@
 		<input type="hidden"  id="type_id" value="${(shopDto.typeId)!''}">
 		<input type="hidden"  id="category_id" value="${(shopDto.categoryId)!''}">
 		<input type="hidden"  id="is_visible" value="${(shopDto.isVisible)!''}">
+		<input type="hidden"  id="is_good" value="${(shopDto.isGood)!''}">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>品牌：</label>
 			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
@@ -74,6 +75,15 @@
 				<div class="check-box">
 					<input type="checkbox"  id="isVisible" name="isVisible" value="Y">
 					<label for="isVisible">&nbsp;</label>
+				</div>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">是否精选：</label>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="check-box">
+					<input type="checkbox"  id="isGood" name="isGood" value="N">
+					<label for="isGood">&nbsp;</label>
 				</div>
 			</div>
 		</div>
